@@ -1,28 +1,54 @@
-// import { isPostionValid } from './validator';
-// const solveSudoku = (sudoku, setSudoku, i, j) => {
-//     if (i === sudoku.length) {
-//         return console.log(sudoku);
-//     }
-//     let ni = 0;
-//     let nj = 0;
-//     if (j === sudoku[0].length - 1) {
-//         nj = 0;
-//         ni = i + 1;
-//     } else {
-//         ni = i;
-//         nj = j + 1;
-//     }
+const solveSudoku = (sudoku, setSudoku) => {
+    const mySudoku = new Array(9);
+    for (let i = 0; i < mySudoku.length; i++) {
+        mySudoku[i] = ['0', '0', '0', '0', '0', '0', '0', '0', '0'];
+    }
+    for (let i = 0; i < mySudoku.length; i++) {
+        for (let j = 0; j < mySudoku.length; j++) {
+            mySudoku[i][j] = `${parseInt(sudoku[i][j])}`;
+        }
+    }
+    const n = mySudoku.length;
+    if (dfs(mySudoku, n)) setSudoku(mySudoku);
+    else console.log("no ans");
+}
+export default solveSudoku;
 
-//     if (!sudoku[i][j] || sudoku[i][j] === ' ') {
-//         for (let k = 1; k <= 9; k++) {
-//             if (isPostionValid(k, i, j, sudoku)) {
-//                 sudoku[i][j] = k;
-//                 solveSudoku(sudoku, setSudoku, ni, nj);
-//                 sudoku[i][j] = 0;
-//             }
-//         }
-//     } else {
-//         solveSudoku(sudoku, setSudoku, ni, nj);
-//     }
-// };
-// export default solveSudoku;
+function dfs(mySudoku, n) {
+    // for every cell in the mySudoku
+    for (let row = 0; row < n; row++) {
+        for (let col = 0; col < n; col++) {
+            // if its empty
+            if (mySudoku[row][col] !== '0') continue;
+            // try every number 1-9
+            for (let i = 1; i <= 9; i++) {
+                const c = i.toString();
+                // if that number is valid
+                if (isValid(mySudoku, row, col, n, c)) {
+                    mySudoku[row][col] = c;
+                    // continue search for that mySudoku, ret true if solution is reached
+                    if (dfs(mySudoku, n)) return true;
+                }
+            }
+            // solution wasnt found for any num 1-9 here, must be a dead end...
+            // set the current cell back to empty
+            mySudoku[row][col] = '0';
+            // ret false to signal dead end 
+            return false;
+        }
+    }
+    // all cells filled, must be a solution
+    return true;
+}
+
+function isValid(mySudoku, row, col, n, c) {
+    const blockRow = Math.floor(row / 3) * 3;
+    const blockCol = Math.floor(col / 3) * 3;
+    for (let i = 0; i < n; i++) {
+        if (mySudoku[row][i] === c || mySudoku[i][col] === c) return false;
+        const curRow = blockRow + Math.floor(i / 3);
+        const curCol = blockCol + Math.floor(i % 3);
+        if (mySudoku[curRow][curCol] === c) return false;
+    }
+    return true;
+}

@@ -5,16 +5,17 @@ export const isValid = (userInput) => {
     return true;
 };
 export const isPostionValid = (userInput, rowId, colId, sudoku) => {
+    if (userInput === '0') return true;
     const row = sudoku[rowId];
-    if (row.includes(parseInt(userInput))) return false;
-    sudoku.forEach((row, i) => {
-        if (row[colId] === parseInt(userInput)) return false;
+    if (row.includes(userInput)) return false;
+    sudoku.forEach((currentRow, i) => {
+        if (currentRow[colId] === userInput) return false;
     });
-    let smi = (rowId / 3) * 3;
-    let smj = (colId / 3) * 3;
+    let smi = (parseInt(rowId / 3)) * 3;
+    let smj = (parseInt(colId / 3)) * 3;
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
-            if (sudoku[smi + i][smj + j] === parseInt(userInput)) {
+            if (sudoku[smi + i][smj + j] === userInput) {
                 return false;
             }
         }
@@ -23,10 +24,9 @@ export const isPostionValid = (userInput, rowId, colId, sudoku) => {
 };
 
 export const isComplete = (sudoku) => {
+    let bool = true;
     sudoku.forEach((row) => {
-        row.forEach((ele) => {
-            if (!ele || ele === ' ') return false;
-        });
+        if(row.includes('0')) bool = false;
     });
-    return true;
+    return bool;
 };
