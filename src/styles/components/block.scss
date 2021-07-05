@@ -4,7 +4,7 @@
         border: 2px solid $yellow;
         border-radius: 1rem;
         margin: 2px;
-        .rows {
+        .row {
             width: 4rem;
             height: 4rem;
             border: 2px solid $yellow;
@@ -16,11 +16,12 @@
         border: 2px solid $orange;
         border-radius: 1rem;
         margin: 2px;
-        .rows {
+        .row {
             width: 4rem;
             height: 4rem;
             border: 2px solid $orange;
             border-radius: 0.5rem;
+            overflow: hidden;
         }
     }
 }
