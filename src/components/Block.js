@@ -30,43 +30,106 @@ const Block = ({ id, sudoku, setSudoku }) => {
         setSudoku(newSudoku);
 
         console.log(sudoku[rowId][colId]);
-    }
-    return <div className={id % 2 === 0 ? 'block-even' : 'block-odd'}>
-        <div className='col'>
-            <div className='row'>
-                {/* id = (row) * 9 + (col) */}
-                <input className='tile' id={((parseInt(id/3)*3) + 0) * 9 + ((id%3*3) + 0)} type='number' onChange={changeHandler} />
+    };
+    const getTileId = (block, row, col) => {
+        return (parseInt(block / 3) * 3 + row) * 9 + ((id % 3) * 3 + col);
+    };
+    const getTileValue = (block, row, col) => {
+        let val = sudoku[parseInt(block / 3) * 3 + row][(id % 3) * 3 + col];
+        return val === 0 ? '-' : val;
+    };
+    return (
+        <div className={id % 2 === 0 ? 'block-even' : 'block-odd'}>
+            <div className='col'>
+                <div className='row'>
+                    {/* id = (row) * 9 + (col) */}
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 0, 0)}
+                        value={getTileValue(id, 0, 0)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 1, 0)}
+                        value={getTileValue(id, 1, 0)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 2, 0)}
+                        value={getTileValue(id, 2, 0)}
+                    />
+                </div>
             </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 1) * 9 + ((id%3*3) + 0)} type='number' onChange={changeHandler} />
+            <div className='col'>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 0, 1)}
+                        value={getTileValue(id, 0, 1)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 1, 1)}
+                        value={getTileValue(id, 1, 1)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 2, 1)}
+                        value={getTileValue(id, 2, 1)}
+                    />
+                </div>
             </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 2) * 9 + ((id%3*3) + 0)} type='number' onChange={changeHandler} />
+            <div className='col'>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 0, 2)}
+                        value={getTileValue(id, 0, 2)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 1, 2)}
+                        value={getTileValue(id, 1, 2)}
+                    />
+                </div>
+                <div className='row'>
+                    <input
+                        className='tile'
+                        type='number'
+                        onChange={changeHandler}
+                        id={getTileId(id, 2, 2)}
+                        value={getTileValue(id, 2, 2)}
+                    />
+                </div>
             </div>
         </div>
-        <div className='col'>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 0) * 9 + ((id%3*3) + 1)} type='number' onChange={changeHandler} />
-            </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 1) * 9 + ((id%3*3) + 1)} type='number' onChange={changeHandler} />
-            </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 2) * 9 + ((id%3*3) + 1)} type='number' onChange={changeHandler} />
-            </div>
-        </div>
-        <div className='col'>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 0) * 9 + ((id%3*3) + 2)} type='number' onChange={changeHandler} />
-            </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 1) * 9 + ((id%3*3) + 2)} type='number' onChange={changeHandler} />
-            </div>
-            <div className='row'>
-                <input className='tile' id={((parseInt(id/3)*3) + 2) * 9 + ((id%3*3) + 2)} type='number' onChange={changeHandler} />
-            </div>
-        </div>
-    </div>
+    );
 };
 
 export default Block;
