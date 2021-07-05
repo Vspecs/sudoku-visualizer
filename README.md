@@ -1,4 +1,11 @@
 # Your Sudoku
 
-You'll be able to provide custom 9x9 sudoku puzzle and this will help you solve every possible option.
-Finally if every block of sudoku is filled, you'll have your answer for your sudoku 🎉
+Get your daily dose of sudoku to sharpen your mind 🚀
+
+- You will get custom random questions that you can try solving.
+- You will also be able to provide custom question for 9x9 sudoku puzzle and ***your sudoku*** will get you the solution.
+
+### Demo
+
+![Banner](https://github.com/Vspecs/sudoku-visualizer/blob/main/demo/banner.png)
+![Action](https://github.com/Vspecs/sudoku-visualizer/blob/main/demo/action.png)
