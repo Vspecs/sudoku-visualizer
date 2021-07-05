@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Table from './Table';
 import { easy, medium, hard } from '../utility/randomSudoku';
+import getAnswer from '../utility/solveSudoku';
 const Action = () => {
     const blankSudoku = new Array(9);
     for (let i = 0; i < blankSudoku.length; i++) {
@@ -31,6 +32,13 @@ const Action = () => {
                     </div>
                     <div className='btn'>
                         <button onClick={clearSudoku}>CleAr</button>
+                    </div>
+                    <div className='btn'>
+                        <button
+                            onClick={() => getAnswer(sudoku, setSudoku, 0, 0)}
+                        >
+                            Solve
+                        </button>
                     </div>
                 </div>
             </div>

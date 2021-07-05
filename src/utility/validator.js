@@ -21,3 +21,12 @@ export const isPostionValid = (userInput, rowId, colId, sudoku) => {
     }
     return true;
 };
+
+export const isComplete = (sudoku) => {
+    sudoku.forEach((row) => {
+        row.forEach((ele) => {
+            if (!ele || ele === ' ') return false;
+        });
+    });
+    return true;
+};
