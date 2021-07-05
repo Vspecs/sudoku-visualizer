@@ -1,4 +1,14 @@
 .action {
     height: 100vh;
     background-color: $purple;
+    &-hero {
+        @include justify(space-between, center);
+        flex-direction: column;
+        &-heading {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            color: $white;
+            margin: 2rem 0;
+        }
+    }
 }

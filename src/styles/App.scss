@@ -2,13 +2,23 @@
 @import './variables.scss';
 @import './components/bannner.scss';
 @import './components/action.scss';
+@import './components/table.scss';
+@import './components/block.scss';
 // font-family: 'Amatic SC', cursive;
 // font-family: 'Nunito', sans-serif;
 // font-family: 'Raleway', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    &:focus-visible {
+        outline: none;
+    }
+}
+
 html {
     body {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
         font-family: 'Raleway', sans-serif;
     }

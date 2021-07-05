@@ -1,6 +1,6 @@
 import React from 'react';
 import github from '../assets/github.png';
-import girl from '../assets/girl.png';
+import girl from '../assets/girl-removebg.png';
 import dotPattern from '../assets/dot-pattern.png';
 import dotPurple from '../assets/dot-purple.png';
 import dotYellow from '../assets/dot-yellow.png';

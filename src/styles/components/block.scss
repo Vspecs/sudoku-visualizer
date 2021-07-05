@@ -1,0 +1,26 @@
+.block {
+    &-even {
+        @include justify(center, center);
+        border: 2px solid $yellow;
+        border-radius: 1rem;
+        margin: 2px;
+        .rows {
+            width: 4rem;
+            height: 4rem;
+            border: 2px solid $yellow;
+            border-radius: 0.5rem;
+        }
+    }
+    &-odd {
+        @include justify(center, center);
+        border: 2px solid $orange;
+        border-radius: 1rem;
+        margin: 2px;
+        .rows {
+            width: 4rem;
+            height: 4rem;
+            border: 2px solid $orange;
+            border-radius: 0.5rem;
+        }
+    }
+}
