@@ -9,7 +9,7 @@ const Banner = () => {
         <div className='banner'>
             <div className='banner-inner'>
                 <div className='banner-left'>
-                    <h3 id='logo'>Sudoku Solver</h3>
+                    <h3 id='logo'>Your Sudoku</h3>
                     <div className='heading'>
                         <h2>SOLVE yOUR daILY</h2>
                         <h2 className='sudoku'>sUDOKU!</h2>

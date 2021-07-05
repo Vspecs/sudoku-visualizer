@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { isValid, isPostionValid } from '../utility/validator';
 import disableScroll from '../utility/disableScroll';
 import { Flip, toast } from 'react-toastify';
 const Block = ({ id, sudoku, setSudoku }) => {
-    const changeHandler = (e) => {
-        const userInput = e.target.value;
+    const changeHandler = async (e) => {
+        const userInput = e.target.value || '0';
         const tileId = e.target.id;
         if (!isValid(userInput)) {
             return toast.dark('Oops! Wrong Input', {
@@ -14,7 +14,6 @@ const Block = ({ id, sudoku, setSudoku }) => {
         }
         const rowId = parseInt(tileId / 9);
         const colId = parseInt(tileId % 9);
-        console.log(sudoku[rowId][colId]);
         const newSudoku = sudoku.map((row, i) => {
             return row.map((col, j) => {
                 if (i === rowId && j === colId) {
@@ -36,8 +35,6 @@ const Block = ({ id, sudoku, setSudoku }) => {
                 autoClose: 2000,
             });
         }
-
-        console.log(sudoku[rowId][colId]);
     };
     const changeColor = (tileId, error) => {
         const target = document.getElementById(tileId);
@@ -49,7 +46,7 @@ const Block = ({ id, sudoku, setSudoku }) => {
     };
     const getTileValue = (block, row, col) => {
         let val = sudoku[parseInt(block / 3) * 3 + row][(id % 3) * 3 + col];
-        return val === 0 ? ' ' : val;
+        return val === '0' ? ' ' : val;
     };
     disableScroll();
     return (
