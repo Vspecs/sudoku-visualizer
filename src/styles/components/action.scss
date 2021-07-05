@@ -1,5 +1,5 @@
 .action {
-    height: 100vh;
+    height: 200vh;
     background-color: $purple;
     &-hero {
         @include justify(space-between, center);
