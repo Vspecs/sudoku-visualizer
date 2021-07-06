@@ -5,7 +5,7 @@ import dotPattern from '../assets/dot-pattern.png';
 import dotPurple from '../assets/dot-purple.png';
 import dotYellow from '../assets/dot-yellow.png';
 import { motion } from 'framer-motion';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const bannerVariant = {
     hidden: {
