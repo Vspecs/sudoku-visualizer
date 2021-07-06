@@ -5,6 +5,7 @@ import dotPattern from '../assets/dot-pattern.png';
 import dotPurple from '../assets/dot-purple.png';
 import dotYellow from '../assets/dot-yellow.png';
 import { motion } from 'framer-motion';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const bannerVariant = {
     hidden: {
@@ -73,6 +74,7 @@ const dotItem = {
         },
     },
 };
+
 const Banner = () => {
     return (
         <div className='banner'>
@@ -96,7 +98,16 @@ const Banner = () => {
                     </motion.p>
                     <motion.div variants={button}>
                         {' '}
-                        <a href='/'>Explore Them</a>
+                        <Link
+                            to='action'
+                            activeClass='active'
+                            spy={true}
+                            smooth={true}
+                            offset={0}
+                            duration={800}
+                        >
+                            Explore Them
+                        </Link>
                     </motion.div>
                 </motion.div>
                 <div className='banner-right'>

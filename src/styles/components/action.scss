@@ -1,26 +1,27 @@
-.action {
+#action {
     height: 100vh;
     background-color: $purple;
     padding-bottom: 2rem;
-    &-hero {
+
+    .action-hero {
         @include justify(space-between, center);
         flex-direction: column;
         position: relative;
 
-        &-heading {
-            font-family: "Amatic SC", cursive;
+        .action-hero-heading {
+            font-family: 'Amatic SC', cursive;
             font-size: 4rem;
             color: $white;
             margin: 2rem 0;
-            @include media("<=desktop", ">tablet") {
+            @include media('<=desktop', '>tablet') {
                 font-size: 3rem;
             }
-            @include media("<=phone") {
+            @include media('<=phone') {
                 font-size: 2rem;
             }
         }
-        &-btns {
-            @include media("<=phone") {
+        .action-hero-btns {
+            @include media('<=phone') {
                 @include justify(center, center);
                 flex-wrap: wrap;
                 width: 350px;
@@ -36,14 +37,14 @@
                     border-radius: 100%;
                     background-color: $black;
                     color: $white;
-                    font-family: "Amatic SC", cursive;
+                    font-family: 'Amatic SC', cursive;
                     font-size: 5rem;
                     transition: 0.3s ease;
                     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
 
                     @include justify(center, center);
 
-                    @include media("<=phone") {
+                    @include media('<=phone') {
                         margin: 10px;
                     }
                     &#check {
@@ -56,19 +57,23 @@
                             width: 15rem;
                             height: 15rem;
                         }
-                        @include media("<=desktop") {
+                        @include media('<=desktop') {
                             width: 10rem;
                             height: 10rem;
                         }
-                        @include media("<=tablet") {
+                        @include media('<=tablet') {
                             left: 2%;
                             top: 2%;
                         }
-                        @include media("<=phone") {
+                        @include media('<=phone') {
                             position: relative;
                             width: 6rem;
                             height: 6rem;
                             font-size: 2.5rem;
+                            &:hover {
+                                width: 7rem;
+                                height: 7rem;
+                            }
                         }
                     }
                     &#solve {
@@ -82,19 +87,23 @@
                             width: 18rem;
                             height: 18rem;
                         }
-                        @include media("<=desktop") {
+                        @include media('<=desktop') {
                             width: 12rem;
                             height: 12rem;
                         }
-                        @include media("<=tablet") {
+                        @include media('<=tablet') {
                             left: 2%;
                             bottom: -22%;
                         }
-                        @include media("<=phone") {
+                        @include media('<=phone') {
                             position: relative;
                             width: 6rem;
                             height: 6rem;
                             font-size: 2.5rem;
+                            &:hover {
+                                width: 7rem;
+                                height: 7rem;
+                            }
                         }
                     }
                     &#clear {
@@ -108,19 +117,23 @@
                             width: 10rem;
                             height: 10rem;
                         }
-                        @include media("<=desktop") {
+                        @include media('<=desktop') {
                             width: 8rem;
                             height: 8rem;
                         }
-                        @include media("<=tablet") {
+                        @include media('<=tablet') {
                             right: 2%;
                             bottom: -20%;
                         }
-                        @include media("<=phone") {
+                        @include media('<=phone') {
                             position: relative;
                             width: 6rem;
                             height: 6rem;
                             font-size: 2.5rem;
+                            &:hover {
+                                width: 7rem;
+                                height: 7rem;
+                            }
                         }
                     }
                     &#new {
@@ -133,30 +146,34 @@
                             width: 16rem;
                             height: 16rem;
                         }
-                        @include media("<=desktop") {
+                        @include media('<=desktop') {
                             font-size: 2rem;
                             width: 10rem;
                             height: 10rem;
                             top: 20%;
                         }
-                        @include media("<=tablet") {
+                        @include media('<=tablet') {
                             right: 2%;
                             top: 2%;
                         }
-                        @include media("<=phone") {
+                        @include media('<=phone') {
                             position: relative;
                             width: 7rem;
                             height: 7rem;
                             font-size: 2.5rem;
+                            &:hover {
+                                width: 8rem;
+                                height: 8rem;
+                            }
                         }
                         &.disabled {
                             opacity: 0.7;
                             cursor: default;
                             font-size: 3rem;
-                            @include media("<=desktop") {
+                            @include media('<=desktop') {
                                 font-size: 2rem;
                             }
-                            @include media("<=phone") {
+                            @include media('<=phone') {
                                 font-size: 1.5rem;
                             }
                         }
