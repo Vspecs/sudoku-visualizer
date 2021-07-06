@@ -22,15 +22,17 @@ const Action = () => {
         return setSudoku(easy());
     };
     const checkAnswer = () => {
-        if (isComplete(sudoku)) return toast('🎉 HURRAYYYYEEEEEE!!!', {
-            transition: Bounce,
-            autoClose: 10000,
-        });
-        else return toast.error('You Suck! 💩 💩 💩 ', {
-            transition: Flip,
-            autoClose: 5000,
-        });
-    }
+        if (isComplete(sudoku))
+            return toast('🎉 HURRAYYYYEEEEEE!!!', {
+                transition: Bounce,
+                autoClose: 10000,
+            });
+        else
+            return toast.error('You Suck! 💩 💩 💩 ', {
+                transition: Flip,
+                autoClose: 5000,
+            });
+    };
     return (
         <div className='action'>
             <div className='action-hero'>
@@ -40,20 +42,33 @@ const Action = () => {
                 <Table sudoku={sudoku} setSudoku={setSudoku} />
                 <div className='action-hero-btns'>
                     <div className='btn'>
-                        <button id='new' className='disabled' disabled={used} onClick={generateRandom}>
-                            {used ? 'Clear first for NEW SUDOKU' : 'nEw sudOku'}
+                        <button id='check' onClick={checkAnswer}>
+                            chEck
                         </button>
                     </div>
                     <div className='btn'>
-                        <button id='clear' onClick={clearSudoku}>clEar</button>
+                        <button id='clear' onClick={clearSudoku}>
+                            clEar
+                        </button>
                     </div>
                     <div className='btn'>
-                        <button id='solve' onClick={() => getAnswer(sudoku, setSudoku)} >
+                        <button
+                            id='solve'
+                            onClick={() => getAnswer(sudoku, setSudoku)}
+                        >
                             sOlve
                         </button>
                     </div>
+
                     <div className='btn'>
-                        <button id='check' onClick={checkAnswer}>chEck</button>
+                        <button
+                            id='new'
+                            className='disabled'
+                            disabled={used}
+                            onClick={generateRandom}
+                        >
+                            {used ? 'Clear first for NEW SUDOKU' : 'nEw sudOku'}
+                        </button>
                     </div>
                 </div>
             </div>
