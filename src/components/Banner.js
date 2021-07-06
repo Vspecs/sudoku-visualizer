@@ -4,7 +4,7 @@ import girl from '../assets/girl-removebg.png';
 import dotPattern from '../assets/dot-pattern.png';
 import dotPurple from '../assets/dot-purple.png';
 import dotYellow from '../assets/dot-yellow.png';
-import { motion, VisibilityAction } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const bannerVariant = {
     hidden: {
