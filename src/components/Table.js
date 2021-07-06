@@ -1,6 +1,7 @@
 import Block from './Block';
 
 const Table = ({ sudoku, setSudoku }) => {
+
     return (
         <div className='table'>
             <Block id='0' sudoku={sudoku} setSudoku={setSudoku} />

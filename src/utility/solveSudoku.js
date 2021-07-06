@@ -1,3 +1,5 @@
+import { toast, Flip } from "react-toastify";
+
 const solveSudoku = (sudoku, setSudoku) => {
     const mySudoku = new Array(9);
     for (let i = 0; i < mySudoku.length; i++) {
@@ -10,7 +12,10 @@ const solveSudoku = (sudoku, setSudoku) => {
     }
     const n = mySudoku.length;
     if (dfs(mySudoku, n)) setSudoku(mySudoku);
-    else console.log("no ans");
+    else return toast.error('No Possible answer with this input 🚫', {
+        transition: Flip,
+        autoClose: 5000,
+    });
 }
 export default solveSudoku;
 

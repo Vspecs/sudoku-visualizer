@@ -5,7 +5,7 @@
 @import './components/action.scss';
 @import './components/table.scss';
 @import './components/block.scss';
-@import './components//footer.scss';
+@import './components/footer.scss';
 // font-family: 'Amatic SC', cursive;
 // font-family: 'Nunito', sans-serif;
 // font-family: 'Raleway', sans-serif;
@@ -41,6 +41,9 @@ html {
                 background-color: rgb(228, 39, 39);
                 color: $black;
                 border-radius: 100%;
+            }
+            &.question{
+                color: $black;
             }
             @include media('<=phone') {
                 font-size: 2.5rem;
