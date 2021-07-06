@@ -36,7 +36,7 @@ const Action = () => {
             });
     };
     return (
-        <div className='action'>
+        <div id='action'>
             <div className='action-hero'>
                 <div className='action-hero-heading'>
                     <h2>Fill the suDoKu</h2>

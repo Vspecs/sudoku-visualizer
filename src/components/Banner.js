@@ -73,6 +73,7 @@ const dotItem = {
         },
     },
 };
+
 const Banner = () => {
     return (
         <div className='banner'>
@@ -96,7 +97,7 @@ const Banner = () => {
                     </motion.p>
                     <motion.div variants={button}>
                         {' '}
-                        <a href='/'>Explore Them</a>
+                        <a href='#action'>Explore Them</a>
                     </motion.div>
                 </motion.div>
                 <div className='banner-right'>
