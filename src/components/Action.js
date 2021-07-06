@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Table from './Table';
-import { easy, medium, hard } from '../utility/randomSudoku';
+import { easy } from '../utility/randomSudoku';
 import { Bounce, Flip, toast } from 'react-toastify';
 import getAnswer from '../utility/solveSudoku';
 import { isComplete } from '../utility/validator';
@@ -9,7 +9,8 @@ const Action = () => {
     for (let i = 0; i < blankSudoku.length; i++) {
         blankSudoku[i] = ['0', '0', '0', '0', '0', '0', '0', '0', '0'];
     }
-    const [sudoku, setSudoku] = useState(easy());
+    const easySudoku = easy();
+    const [sudoku, setSudoku] = useState(easySudoku);
     const [used, setUsed] = useState(true);
     const clearSudoku = () => {
         setUsed(false);
@@ -19,7 +20,8 @@ const Action = () => {
     const generateRandom = () => {
         setUsed(true);
         document.getElementById('new').classList.add('disabled');
-        return setSudoku(easy());
+        const newEasySudoku = easy();
+        return setSudoku(newEasySudoku);
     };
     const checkAnswer = () => {
         if (isComplete(sudoku))
@@ -39,7 +41,9 @@ const Action = () => {
                 <div className='action-hero-heading'>
                     <h2>Fill the suDoKu</h2>
                 </div>
+
                 <Table sudoku={sudoku} setSudoku={setSudoku} />
+
                 <div className='action-hero-btns'>
                     <div className='btn'>
                         <button id='check' onClick={checkAnswer}>

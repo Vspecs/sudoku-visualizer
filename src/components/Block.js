@@ -1,4 +1,3 @@
-import React from 'react';
 import { isValid, isPostionValid } from '../utility/validator';
 import disableScroll from '../utility/disableScroll';
 import { Flip, toast } from 'react-toastify';
@@ -14,6 +13,7 @@ const Block = ({ id, sudoku, setSudoku }) => {
         }
         const rowId = parseInt(tileId / 9);
         const colId = parseInt(tileId % 9);
+        // if (occupiedPositions.includes(tileId)) remind to Clear to provide custom question
         const newSudoku = sudoku.map((row, i) => {
             return row.map((col, j) => {
                 if (i === rowId && j === colId) {
@@ -48,6 +48,7 @@ const Block = ({ id, sudoku, setSudoku }) => {
         let val = sudoku[parseInt(block / 3) * 3 + row][(id % 3) * 3 + col];
         return val === '0' ? ' ' : val;
     };
+
     disableScroll();
     return (
         <div className={id % 2 === 0 ? 'block-even' : 'block-odd'}>

@@ -30,6 +30,15 @@
                 @include media('<=phone') {
                     font-size: 1rem;
                 }
+                a {
+                    text-decoration: none;
+                    color: $yellow;
+                    transition: 0.2s ease;
+                    &:hover {
+                        font-size: 1.6rem;
+                        text-shadow: 2px 2px 5px $orange;
+                    }
+                }
             }
         }
         .footer-right {
@@ -39,6 +48,7 @@
             width: 50%;
             color: white;
             h3 {
+                padding-right: 8%;
                 margin-top: 10px;
                 color: $green;
                 margin-bottom: 10px;
@@ -64,6 +74,11 @@
                         fill: $yellow;
                     }
                 }
+            }
+            .copyright {
+                margin-top: 2rem;
+                font-size: 1.2rem;
+                color: $grey;
             }
         }
     }

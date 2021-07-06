@@ -3,6 +3,7 @@ import {
     getMediumSudoku,
     getHardSudoku,
 } from 'fake-sudoku-puzzle-generator';
+
 export const easy = () => {
     const Puzzle = getEasySudoku();
     return Puzzle.map((row, r) => {

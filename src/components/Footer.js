@@ -14,7 +14,7 @@ const Footer = () => {
     const abhayLinks = {
         github: 'https://github.com/Abhay-G',
         llinkedin: 'https://www.linkedin.com/in/abhay-g07/',
-        website: 'https://abhay.codes',
+        website: 'https://abhaydev.me',
         email: 'abhayg.0704@gmail.com'
     };
     return (
@@ -37,9 +37,10 @@ const Footer = () => {
                         <a target='_blank' rel='noreferrer' href={ankitLinks.llinkedin}><Linkedin className='linkedin' /></a>
                         <a target='_blank' rel='noreferrer' href={`mailto:${ankitLinks.email}`}><Mail className='mail' /></a>
                     </div>
+                    <p className='copyright'>&copy; VSpecs 2021</p>
                 </div>
             </div>
-            <h3 id='visit'>viSit agAin</h3>
+            <h3 id='visit'>Your Sudoku</h3>
             <FooterDots id='footer-dots' />
         </div>
     );
