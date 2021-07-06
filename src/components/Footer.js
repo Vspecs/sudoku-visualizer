@@ -1,5 +1,9 @@
 import React from 'react';
 import { ReactComponent as FooterDots } from '../assets/footer-dots.svg';
+import { ReactComponent as Github } from '../assets/githubb.svg';
+import { ReactComponent as Linkedin } from '../assets/linkedin.svg';
+import { ReactComponent as Mail } from '../assets/mail.svg';
+
 const Footer = () => {
     return (
         <div className='footer'>
@@ -11,11 +15,20 @@ const Footer = () => {
                 </div>
                 <div className='footer-right'>
                     <h3>Links</h3>
-                    <p>Abhay gupta</p>
-                    <p>Ankit Malik</p>
+                    <div className='links'>
+                        <Github className='github' />
+                        <Linkedin className='linkedin' />
+                        <Mail className='mail' />
+                    </div>
+                    <div className='links'>
+                        <Github className='github' />
+                        <Linkedin className='linkedin' />
+                        <Mail className='mail' />
+                    </div>
                 </div>
             </div>
-            <FooterDots />
+            <h3 id='visit'>viSit agAin</h3>
+            <FooterDots id='footer-dots' />
         </div>
     );
 };
